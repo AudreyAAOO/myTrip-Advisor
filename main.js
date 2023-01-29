@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
 			message,
 		});
 
-		// réquête vers le serveur en local
+		// réquête vers le serveur en local // import d'axios ds index.html
 		const { data } = await axios.post("http://localhost:3000/form", {
 			firstname,
 			lastname,
