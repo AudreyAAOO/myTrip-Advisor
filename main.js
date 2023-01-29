@@ -1,3 +1,8 @@
+
+try {
+	
+
+
 // écouteur de fin de chargement de page DOMContentLoaded
 // pour avoir la certitude que tous les éléments du DOM
 // sont chargés
@@ -55,3 +60,6 @@ document.addEventListener("DOMContentLoaded", () => {
 		console.log("response>>", data);
 	});
 });
+} catch (error) {
+	res.status(400).json(error.message);
+}
