@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>myTrip Advisor</title>
+
+		<link rel="stylesheet" href="./assets/css/reset.css" />
+		<link rel="stylesheet" href="./assets/css/fonts.css" />
+		<link rel="stylesheet" href="./assets/css/style.css" />
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.1.3/axios.min.js"></script>
+		<script src="./main.js"></script>
+		 <!-- Axios -->
+		 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+		<script
+			src="https://kit.fontawesome.com/c28aec6eae.js"
+			crossorigin="anonymous"
+		></script>
+	</head>
+	<body>
+		<header>
+			<div class="container">
+				<div class="divLogo">
+					<img
+						class="logo"
+						src="./assets/img/tripadvisor_logo.svg"
+						alt="logo du site TripAdvisor"
+					/>
+				</div>
+				<div class="inputSearch">
+					<input type="search" name="" id="" />
+				</div>
+				<nav>
+					<button><i class="fa-solid fa-pencil"></i> Avis</button>
+
+					<button><i class="fa-regular fa-heart"></i> Voyage</button>
+
+					<button><i class="fa-regular fa-bell"></i> Alertes</button>
+
+					<button id="login">Connectez-vous</button>
+					<div class="modal">
+						<div class="cadreForm">
+							<span id="echap">X</span>
+							<p>Formulaire de contact</p>
+							<div class="leFormulaire">
+								<form action="#" method="post">
+									<input
+										type="text"
+										name="firstname"
+										id="firstname"
+										placeholder="Prénom"
+									/>
+									<input
+										type="text"
+										name="lastname"
+										id="lastname"
+										placeholder="Nom"
+										autofocus="Nom"
+									/>
+									<input
+										type="email"
+										name="email"
+										id="email"
+										placeholder="Email"
+									/>
+									<textarea
+										rows="6"
+										cols="20"
+										name="message"
+										id="message"
+										placeholder="Ecrivez votre message ici..."
+									></textarea>
+
+									<button type="submit">Envoyer !</button>
+								</form>
+							</div>
+						</div>
+					</div>
+
+					<button><i class="fa-solid fa-cart-shopping"></i> Panier</button>
+				</nav>
+			</div>
+		</header>
+
+		<main>
+			<h1><span class="premierMot">Explorez</span> Helsinki</h1>
+			<p class="baseline">
+				Les revenus influencent le choix des expériences présentées sur cette
+				page : en savoir plus.
+			</p>
+
+			<!-- -- Section menu catégories --★゜・。。・゜゜・。。・゜☆゜・。。・゜゜・。。・゜★゜・。。・゜゜・。。・゜☆ */-->
+			<nav class="category">
+				<div><span>Hôtels</span><i class="fa-solid fa-house-user"></i></div>
+				<div>
+					<span>Location de vacances</span><i class="fa-solid fa-pencil"></i>
+				</div>
+				<div><span>Activités</span><i class="fa-solid fa-film"></i></div>
+				<div><span>Restaurants</span><i class="fa-solid fa-utensils"></i></div>
+				<div>
+					<span>Forum de voyage</span><i class="fa-regular fa-comments"></i>
+				</div>
+
+				<div class="extraMenu">
+					<span>Vols</span><i class="fa-solid fa-plane"></i>
+				</div>
+				<div class="extraMenu">
+					<span>Croisières</span><i class="fa-solid fa-plane"></i>
+				</div>
+				<div><span>Plus</span><i class="fa-solid fa-ellipsis"></i></div>
+			</nav>
+
+			<!-- -- Section photos-collage --★゜・。。・゜゜・。。・゜☆゜・。。・゜゜・。。・゜★゜・。。・゜゜・。。・゜☆ */-->
+			<section class="photocollage">
+				<div class="ColonneGauche">
+					<img src="./assets/img/uspenski2.jpg" alt="" />
+				</div>
+
+				<div class="ColonneDroite">
+					<div>
+						<img src="./assets/img/finnish-fortress-and.jpg" alt="" />
+					</div>
+					<div><img src="./assets/img/winter-evening.jpg" alt="" /></div>
+				</div>
+			</section>
+			<div class="breadcrum">
+				<nav>
+					<a href="#">Europe</a>
+					<span> > </span>
+					<a href="#">Finlande</a>
+					<span> > </span>
+					<a href="#">Uusima</a>
+					<span> > </span>
+					<a href="#">Helsinki</a>
+				</nav>
+				<p>Visitez : Helsinki</p>
+			</div>
+			<!-- -- Section info + Map --★゜・。。・゜゜・。。・゜☆゜・。。・゜゜・。。・゜★゜・。。・゜゜・。。・゜☆ */-->
+			<section class="infomap">
+				<div class="col1">
+					<h2>Helsinki: informations</h2>
+					<p>
+						Située au bord de la Baltique, la ville moderne et cosmopolite
+						d'Helsinki a été désignée Capitale mondiale du design en 2012. La
+						beauté de la nature alentour se mêle harmonieusement aux exploits
+						high-tech et aux modes contemporaines de la ville. Lors de vos
+						excursions à pied dans le centre-ville, vous découvrirez les
+						vestiges de son histoire, ainsi qu'une architecture moderne et des
+						designs dernier cri qui révèlent le désir de la ville d'aller de
+						l'avant. Partez en été pour profiter des journées interminables ou
+						partez à l'aventure en hiver pour profiter des longues soirées
+						enneigées.
+					</p>
+				</div>
+				<div class="col2">
+					<div class="creerUnVoyage">
+						<h2>Helsinki : commencez à organiser !</h2>
+						<p>
+							Créer un voyage pour enregistrer et organiser toutes vos idées et
+							les visualiser sur une carte.
+						</p>
+						<button class="planning">Créez un voyage</button>
+					</div>
+					<div class="colonneMap"></div>
+				</div>
+			</section>
+
+			<!-- -- Section carrousel 1 --★゜・。。・゜゜・。。・゜☆゜・。。・゜゜・。。・゜★゜・。。・゜゜・。。・゜☆ */-->
+			<h2>Helsinki: les immanquables</h2>
+			<section class="carrousel">
+				<div class="col1">
+					<h3>Se divertir</h3>
+					<p>
+						Des lieux à voir, des rues à explorer et des expériences
+						emblématiques.
+					</p>
+					<a href="#">Tout afficher</a>
+				</div>
+
+				<div class="col2">
+					<span>
+						<img
+							src="./assets/img/suomenlinna.jpg"
+							alt="Forteresse de Suomenlinna sous la neige"
+						/>
+						<div class="heart"><i class="fa-regular fa-heart"></i></div>
+
+						<h4>Forteresse de Suomenlinna</h4>
+						<p class="legende">
+							Sites historiques, Bases & Installations militaires
+						</p></span
+					>
+
+					<span>
+						<img src="./assets/img/photo-juha-martinmaa.jpg" alt="" />
+						<h4>Eglise Temppeliaukion</h4>
+						<p class="legende">
+							Bâtiments architecturaux, Sites religieux
+						</p></span
+					>
+
+					<span>
+						<img src="./assets/img/20180620-095547-largejpg.jpg" alt="" />
+						<h4>Cathédrale d'Helsinki</h4>
+						<p class="legende">Églises et cathédrales</p></span
+					>
+					<span>
+						<img src="./assets/img/russische-uspenski-kathedrale.jpg" alt="" />
+						<h4>Cathédrale Ouspenski</h4>
+						<p class="legende">Églises et cathédrales</p></span
+					>
+					<span>
+						<img src="./assets/img/seurasaari.jpg" alt="" />
+						<h4>Musée de plein air de Seurasaari</h4>
+						<p class="legende">Sites historiques, Musées d'histoire</p></span
+					>
+				</div>
+			</section>
+
+			<!-- -- Section carrousel 2 --★゜・。。・゜゜・。。・゜☆゜・。。・゜゜・。。・゜★゜・。。・゜゜・。。・゜☆ */-->
+			<section class="carrousel">
+				<div class="col1">
+					<h3>Se reposer</h3>
+					<p>Un mélange de charme, de modernité et de valeurs sûres.</p>
+				</div>
+				<div class="col2">
+					<span>
+						<img
+							src="./assets/img/hotelKatajanoka.jpg"
+							alt="Forteresse de Suomenlinna sous la neige"
+						/>
+						<i class="fa-regular fa-heart"></i>
+						<h4>Hotel Katajanokka</h4>
+						<p class="legende">une ancienne prison rénovée</p></span
+					>
+					<span>
+						<img src="./assets/img/hotelGLOHotelArt.jpg" alt="" />
+						<h4>GLO Hotel Art</h4>
+						<p class="legende"></p
+					></span>
+
+					<span>
+						<img src="./assets/img/hotelLapland.jpg" alt="" />
+						<h4>Lapland Hotels Bulevardi</h4>
+						<p class="legende"></p
+					></span>
+					<span>
+						<img src="./assets/img/hotelRadissonBluPlaza.jpg" alt="" />
+						<h4>Radisson Blu Plaza Hotel</h4>
+						<p class="legende"></p
+					></span>
+					<span>
+						<img src="./assets/img/hotelU14.jpg" alt="" />
+						<h4>HotelU14</h4>
+						<p class="legende"></p
+					></span>
+				</div>
+			</section>
+		</main>
+
+		<!-- -- FOOTER --★゜・。。・゜゜・。。・゜☆゜・。。・゜゜・。。・゜★゜・。。・゜゜・。。・゜☆ */-->
+
+		<footer>
+			<div class="footerLeft">
+				<img
+					src="./assets/img/Tripadvisorlogo.png"
+					alt="logo de Trip Advisor"
+				/>
+				<p class="copyright">© 2023 Tripadvisor LLC Tous droits réservés.</p>
+				<p class="navFooter">
+					<a href="#">Conditions d'utilisation</a><br />
+					<a href="#">Confidentialité et utilisation des cookies</a><br />
+					<a href="#">Accord d'utilisation des cookies</a>
+					<a href="#">Plan du site</a><br />
+					<a href="#">Fonctionnement du site</a>
+				</p>
+				<p class="avertissement">
+					Cette version de notre site internet s'adresse aux personnes parlant
+					français en France. Si vous habitez un autre pays ou une autre région,
+					merci de choisir la version de Tripadvisor appropriée pour votre pays
+					ou région dans le menu déroulant.
+					<a href="#">plus</a>
+				</p>
+			</div>
+
+			<div class="footerRight">
+				<div class="footercontainer">
+					<select name="devise" id="footerEuro">
+						<!-- <optgroup label=""></optgroup> -->
+						<option value="euros">€ EUR</option>
+						<option value="dollars">$ Dollars américains</option>
+						<option value="livres">£ Livres sterling</option>
+					</select>
+				</div>
+				<div class="footercontainer">
+					<select name="pays" id="footerCountry">
+						<!-- <optgroup label=""></optgroup> -->
+						<option value="france">France</option>
+						<option value="usa">United States</option>
+						<option value="uk">United Kingdom</option>
+					</select>
+				</div>
+			</div>
+		</footer>
+	</body>
+</html>

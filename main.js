@@ -1,0 +1,54 @@
+// écouteur de fin de chargement de page DOMContentLoaded
+// pour avoir la certitude que tous les éléments du DOM
+// sont chargés
+document.addEventListener("DOMContentLoaded", () => {
+	console.log("Content Loaded");
+
+	//! Cacher/Afficher la modal 。。+゜゜。。+゜゜。。+゜゜。。+゜゜。。+゜゜。。+゜゜。。+゜゜。。+゜゜。。+゜゜。。+゜゜。。+゜゜。。+゜゜。。゜+゜。。+゜゜
+
+	document.querySelector("#login").addEventListener("click", () => {
+		console.log("test click");
+		//console.dir(login);// `dir` retournera l'arbre de l'élément
+		document.querySelector(".modal").classList.add("modalHidden");
+		document.querySelector(".cadreForm").classList.add("cadreFormHidden");
+	});
+	const btn = document.querySelector("#echap");
+
+	const btnEchap = document
+		.querySelector("#echap")
+		.addEventListener("click", () => {
+			console.log("test click X");
+			document.querySelector(".modal").classList.remove("modalHidden");
+			document.querySelector(".cadreForm").classList.remove("cadreFormHidden");
+		});
+
+	//!   Gestion du formulaire 。。+゜゜。。+゜゜。。+゜゜。。+゜゜。。+゜゜。。+゜゜。。+゜゜。。+゜゜。。+゜゜。。+゜゜。。+゜゜。。+゜゜。。゜+゜。。+゜゜
+
+	document.querySelector("form").addEventListener("submit", async (event) => {
+		// empêcher le refresh de la page au submit
+		event.preventDefault();
+		console.log(submit);
+
+		const firstname = document.querySelector("#firstname").value;
+		const lastname = document.querySelector("#lastname").value;
+		const email = document.querySelector("#email").value;
+		const message = document.querySelector("#message").value;
+
+		console.log({
+			firstname,
+			lastname,
+			email,
+			message,
+		});
+
+		// réquête vers le serveur en local
+		const { data } = await axios.post("http://localhost:3000/form", {
+			firstname,
+			lastname,
+			email,
+			message,
+		});
+
+		console.log("response>>", data);
+	});
+});
