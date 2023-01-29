@@ -42,12 +42,15 @@ document.addEventListener("DOMContentLoaded", () => {
 		});
 
 		// réquête vers le serveur en local // import d'axios ds index.html
-		const { data } = await axios.post("http://localhost:3000/form", {
-			firstname,
-			lastname,
-			email,
-			message,
-		});
+		const { data } = await axios.post(
+			"https://site--mytripadvisorbackend--hw4gvwsxlwd5.code.run/form",
+			{
+				firstname,
+				lastname,
+				email,
+				message,
+			}
+		);
 
 		console.log("response>>", data);
 	});
