@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	document.querySelector("form").addEventListener("submit", async (event) => {
 		// empêcher le refresh de la page au submit
 		event.preventDefault();
-		console.log(submit);
+		console.log("submit");
 
 		const firstname = document.querySelector("#firstname").value;
 		const lastname = document.querySelector("#lastname").value;
