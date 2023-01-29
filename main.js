@@ -30,34 +30,38 @@ try {
 		document
 			.querySelector("#form")
 			.addEventListener("submit", async (event) => {
-				// empêcher le refresh de la page au submit
-				event.preventDefault();
-				console.log("submit");
+				try {
+					// empêcher le refresh de la page au submit
+					event.preventDefault();
+					console.log("submit");
 
-				const firstname = document.querySelector("#firstname").value;
-				const lastname = document.querySelector("#lastname").value;
-				const email = document.querySelector("#email").value;
-				const message = document.querySelector("#message").value;
+					const firstname = document.querySelector("#firstname").value;
+					const lastname = document.querySelector("#lastname").value;
+					const email = document.querySelector("#email").value;
+					const message = document.querySelector("#message").value;
 
-				console.log({
-					firstname,
-					lastname,
-					email,
-					message,
-				});
-
-				// réquête vers le serveur en local // import d'axios ds index.html
-				const { data } = await axios.post(
-					"http://127.0.0.1:3000/form", //"http://127.0.0.1:3000/form" https://site--mytripadvisorbackend--hw4gvwsxlwd5.code.run/form
-					{
+					console.log({
 						firstname,
 						lastname,
 						email,
 						message,
-					}
-				);
+					});
 
-				console.log("response>>", data);
+					// réquête vers le serveur en local // import d'axios ds index.html
+					const { data } = await axios.post(
+						"http://127.0.0.1:3000/form", //"http://127.0.0.1:3000/form" https://site--mytripadvisorbackend--hw4gvwsxlwd5.code.run/form
+						{
+							firstname,
+							lastname,
+							email,
+							message,
+						}
+					);
+
+					console.log("response>>", data);
+				} catch (error) {
+					res.status(400).json(error.message);
+				}
 			});
 	});
 } catch (error) {
