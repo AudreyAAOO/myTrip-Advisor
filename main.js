@@ -54,6 +54,7 @@ try {
 							firstname,
 							lastname,
 							email,
+							subject,
 							message,
 						}
 					);
