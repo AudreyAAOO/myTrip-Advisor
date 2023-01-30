@@ -30,39 +30,39 @@ try {
 		document
 			.querySelector("#form")
 			.addEventListener("submit", async (event) => {
-				try {
-					// empêcher le refresh de la page au submit
-					event.preventDefault();
-					console.log("submit");
+				// try {
+				// empêcher le refresh de la page au submit
+				event.preventDefault();
+				console.log("submit");
 
-					const firstname = document.querySelector("#firstname").value;
-					const lastname = document.querySelector("#lastname").value;
-					const email = document.querySelector("#email").value;
-					const message = document.querySelector("#message").value;
+				const firstname = document.querySelector("#firstname").value;
+				const lastname = document.querySelector("#lastname").value;
+				const email = document.querySelector("#email").value;
+				const message = document.querySelector("#message").value;
 
-					console.log({
+				console.log({
+					firstname,
+					lastname,
+					email,
+					message,
+				});
+
+				// réquête vers le serveur en local // import d'axios ds index.html
+				const { data } = await axios.post(
+					"https://site--mytripadvisorbackend--hw4gvwsxlwd5.code.run/form", //"http://127.0.0.1:3000/form" https://site--mytripadvisorbackend--hw4gvwsxlwd5.code.run/form
+					{
 						firstname,
 						lastname,
 						email,
+						subject,
 						message,
-					});
+					}
+				);
 
-					// réquête vers le serveur en local // import d'axios ds index.html
-					const { data } = await axios.post(
-						"https://site--mytripadvisorbackend--hw4gvwsxlwd5.code.run/form", //"http://127.0.0.1:3000/form" https://site--mytripadvisorbackend--hw4gvwsxlwd5.code.run/form
-						{
-							firstname,
-							lastname,
-							email,
-							subject,
-							message,
-						}
-					);
-
-					console.log("response>>", data);
-				} catch (error) {
-					res.status(400).json(error.message);
-				}
+				console.log("response>>", data);
+				// } catch (error) {
+				// 	res.status(400).json(error.message);
+				// }
 			});
 	});
 } catch (error) {
